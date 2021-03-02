@@ -1,4 +1,4 @@
-package ro.acs.cts.week2.test;
+package ro.ase.cts.week2.test;
 
 import ro.ase.cts.week2.interest.Profitable;
 

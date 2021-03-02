@@ -1,4 +1,4 @@
-package ro.acs.cts.week2.classes;
+package ro.ase.cts.week2.classes;
 
 public abstract class Account {
 	public abstract void deposit(double amount);
