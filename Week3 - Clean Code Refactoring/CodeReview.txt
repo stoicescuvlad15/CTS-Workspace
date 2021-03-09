@@ -12,3 +12,7 @@ Code Review
 	- Too many "magic numbers" (hard-coded values)
 	- Is t limited to {1,2,3,4} or it can be bigger?
 	- There are no validations for t, s and period
+	
+3. Single Responsibility & KISS
+
+	- Outsource the intermediary...
