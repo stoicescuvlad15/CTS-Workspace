@@ -30,17 +30,28 @@ public class DbConnection {
 	}
 
 	private DbConnection(String socket, String schema) {
-		super();
 		this.socket = socket;
 		this.schema = schema;
 	}
 
 	// the method used to return the reference to the unique object
+	// is using default/application settings values
 	public static DbConnection getDbConnection() {
 		if (DbConnection.dbConnection == null) {
 			// you can get here the details from files, etc.
 			dbConnection = new DbConnection();
 		}
+		return DbConnection.dbConnection;
+	}
+
+	public static DbConnection getDbConnection(String socket, String schema) {
+		if (DbConnection.dbConnection == null) {
+			dbConnection = new DbConnection(socket, schema);
+		}
+		// optional - throw an error if they try to open a connection to a different
+		// database
+		if (!socket.equals(dbConnection.socket) || !schema.equals(dbConnection.schema))
+			throw new UnsupportedOperationException("You already have an opened connection");
 		return DbConnection.dbConnection;
 	}
 
